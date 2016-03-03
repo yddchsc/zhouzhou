@@ -2,7 +2,7 @@
   $.fn.gallerybox = function(options) {
     var
       defaults = {
-        bgColor: '#000',
+        bgColor: '#000000',
         bgOpacity: 0.95,
         closeText: 'CLOSE'
       },
@@ -16,7 +16,7 @@
           .appendTo('body');
 
         // Create span element for closing GalleryBox
-        $('<span>' + settings.closeText + '</span>')
+        $('<span style="font-size:30px;color:#000">' + settings.closeText + '</span>')
           .delay('fast')
           .fadeIn()
           .appendTo('#gallerybox')

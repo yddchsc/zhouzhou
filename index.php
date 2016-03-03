@@ -1,11 +1,20 @@
+<?php 
+	session_start(); 
+?>
 <!doctype html>
 <html lang="zh">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Gallerybox-全屏响应式jQuery图片画廊插件</title>
-	<link rel="stylesheet" href="http://libs.useso.com/js/bootstrap/3.2.0/css/bootstrap.min.css">
+	<title>粥粥</title>
+	<link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css"/>
+	<script src="http://cdn.gbtags.com/jquery/2.1.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<!--<link rel="stylesheet" href="http://libs.useso.com/js/bootstrap/3.2.0/css/bootstrap.min.css">
+	<script src="http://libs.useso.com/js/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')</script>
+	<script src="http://libs.useso.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>-->
 	<link rel="stylesheet" type="text/css" href="css/gallerybox.css">
 	<style type="text/css">
 		#gallery-wrapper {
@@ -45,9 +54,26 @@
 		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
 	<![endif]-->
 </head>
-<body>
-
-		
+	<div class="navbar navbar-inverse" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">粥粥</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">粥粥</a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">相册</a></li>
+					<li><a href="#">视频</a></li>
+					<li><a href="#">联系我们</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
 		<section id="gallery-wrapper" class="wrapper">
 			<article class="white-panel"><img src="img/1.jpg" class="thumbnail gallerybox"></article>
 			<article class="white-panel"><img src="img/2.jpg" class="thumbnail gallerybox"></article>
@@ -70,11 +96,9 @@
 			<article class="white-panel"><img src="img/19.jpg" class="thumbnail gallerybox"></article>
 			<article class="white-panel"><img src="img/20.jpg" class="thumbnail gallerybox"></article>
 			<article class="white-panel"><img src="img/21.jpg" class="thumbnail gallerybox"></article>
+			<article class="white-panel"><form action="index.php" method="get"><button type="submit" class="btn btn-info btn-block" style="margin:90px 0 90px 0" id="btn">下一页</button></form></article>
         </section>
-
 	
-	<script src="http://libs.useso.com/js/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
-	<script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')</script>
 	<script src="js/pinterest_grid.js"></script>
 	<script src="js/jquery.gallerybox.js"></script>
 	<script type="text/javascript">
@@ -94,10 +118,44 @@
 		//图片画廊插件
 		$(function(){
 			$(".gallerybox").gallerybox({
-				bgColor:"#d2527f",
+				bgColor:"#b9acac",
 				bgOpacity:0.85
 			});
 		});
 	</script>
+	<?php
+		if(!$_SESSION['views'])
+			$_SESSION['views']=0;
+		$conn = mysqli_connect("sqld.duapp.com","7a2f0aa875c94306b77ef58cd43fa88d","e4fdd5b5aef74b608462f1b8706e5a7d");
+		mysqli_select_db($conn,"vdxxYAcxvlZAZNycflys"); //mysql_select_db("")指定mysql使用的数据库
+
+		$qid = mysqli_query($conn,"select count(*) as total from images");
+		$res = mysqli_fetch_array($qid);
+		$num = $res['total'];
+		
+		$m=$_SESSION['views']*21+21;
+		$a=$_SESSION['views']*21;
+		if ($m>=$num){
+			$m=$num;
+			$_SESSION['views']=-1;
+		}
+		
+		$result=mysqli_query($conn,"SELECT * FROM images LIMIT $a,$m");
+		echo "<script type=\"text/javascript\">
+    		var images = document.getElementsByTagName(\"img\");";
+    		$i=0;
+    		while ($row=mysqli_fetch_object($result)){
+    			$result1 = mysqli_query($conn,"select * from images where id=$row->id") or die("Cant perform Query");  
+				$row1=mysqli_fetch_object($result1);
+    			echo "images[$i].setAttribute(\"src\",\"$row1->src\");";
+    			$i=$i+1;
+    			if($i==21)
+    				break;
+  			}
+  			$_SESSION['views']=$_SESSION['views']+1;
+		echo "
+	</script>";
+	?>
+	
 </body>
 </html>
