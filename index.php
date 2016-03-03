@@ -132,30 +132,38 @@
 		$port = 4050;
 		$user = '7a2f0aa875c94306b77ef58cd43fa88d';//用户AK
 		$pwd = 'e4fdd5b5aef74b608462f1b8706e5a7d';//用户SK
-		$conn = mysqli_connect("{$host}:{$port}",$user,$pwd);
-		mysqli_select_db($conn,$dbname); //mysql_select_db("")指定mysql使用的数据库
 
-		$qid = mysqli_query($conn,"select count(*) as total from images");
-		$res = mysqli_fetch_array($qid);
+		$conn = @mysql_connect("{$host}:{$port}",$user,$pwd,true);
+		if(!$conn) {
+    		die("Connect Server Failed: " . mysql_error());
+		}
+		/*连接成功后立即调用mysql_select_db()选中需要连接的数据库*/
+		if(!mysql_select_db($dbname,$conn)) {
+    		die("Select Database Failed: " . mysql_error($conn));
+		}
+
+/*至此连接已完全建立，就可对当前数据库进行相应的操作了*/
+//创建一个数据库表
+		$qid = mysql_query("select count(*) as total from images",$conn);
+		$res = mysql_fetch_array($qid);
 		$num = $res['total'];
 		
 		$m=$_SESSION['page']*21+21;
 		$a=$_SESSION['page']*21;
-		echo $_SESSION['page'];
-		echo $num;
+
 		if ($m >= $num){
 			$m=$num;
 			$_SESSION['page']=-1;
 		}
 		
-		$result=mysqli_query($conn,"SELECT * FROM images LIMIT $a,$m");
-		echo $_SESSION['page'];
+		$result=mysql_query("SELECT * FROM images LIMIT $a,$m",$conn);
+		
 		echo "<script type=\"text/javascript\">
     		var images = document.getElementsByTagName(\"img\");";
     		$i=0;
-    		while ($row=mysqli_fetch_object($result)){
-    			$result1 = mysqli_query($conn,"select * from images where id=$row->id") or die("Cant perform Query");  
-				$row1=mysqli_fetch_object($result1);
+    		while ($row=mysql_fetch_object($result)){
+    			$result1 = mysql_query("select * from images where id=$row->id",$conn) or die("Cant perform Query");  
+				$row1=mysql_fetch_object($result1);
     			echo "images[$i].setAttribute(\"src\",\"$row1->src\");";
     			$i=$i+1;
     			if($i==21)
