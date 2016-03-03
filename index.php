@@ -141,6 +141,7 @@
 		}
 		
 		$result=mysqli_query($conn,"SELECT * FROM images LIMIT $a,$m");
+		echo $_SESSION['page'];
 		echo "<script type=\"text/javascript\">
     		var images = document.getElementsByTagName(\"img\");";
     		$i=0;
