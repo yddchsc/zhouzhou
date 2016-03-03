@@ -151,6 +151,7 @@
 		$m=$_SESSION['page']*21+21;
 		$a=$_SESSION['page']*21;
 
+		echo $_SESSION['page'];
 		if ($m >= $num){
 			$m=$num;
 			$_SESSION['page']=-1;
