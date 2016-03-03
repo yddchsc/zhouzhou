@@ -124,8 +124,8 @@
 		});
 	</script>
 	<?php
-		if(!$_SESSION['page'])
-			$_SESSION['page']=0;
+		if(!$_SESSION['pages'])
+			$_SESSION['pages']=0;
 		$dbname = 'vdxxYAcxvlZAZNycflys';
 		/*填入数据库连接信息*/
 		$host = 'sqld.duapp.com';
@@ -148,13 +148,13 @@
 		$res = mysql_fetch_array($qid);
 		$num = $res['total'];
 		
-		$m=$_SESSION['page']*21+21;
-		$a=$_SESSION['page']*21;
+		$m=$_SESSION['pages']*21+21;
+		$a=$_SESSION['pages']*21;
 
-		echo $_SESSION['page'];
+		echo $_SESSION['pages'];
 		if ($m >= $num){
 			$m=$num;
-			$_SESSION['page']=-1;
+			$_SESSION['pages']=-1;
 		}
 		
 		$result=mysql_query("SELECT * FROM images LIMIT $a,$m",$conn);
@@ -170,7 +170,7 @@
     			if($i==21)
     				break;
   			}
-  			$_SESSION['page']=$_SESSION['page']+1;
+  			$_SESSION['pages']=$_SESSION['pages']+1;
 		echo "
 	</script>";
 	?>
