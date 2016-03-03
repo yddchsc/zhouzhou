@@ -126,8 +126,14 @@
 	<?php
 		if(!$_SESSION['page'])
 			$_SESSION['page']=0;
-		$conn = mysqli_connect("sqld.duapp.com:4050","7a2f0aa875c94306b77ef58cd43fa88d","e4fdd5b5aef74b608462f1b8706e5a7d");
-		mysqli_select_db($conn,"vdxxYAcxvlZAZNycflys"); //mysql_select_db("")指定mysql使用的数据库
+		$dbname = 'vdxxYAcxvlZAZNycflys';
+		/*填入数据库连接信息*/
+		$host = 'sqld.duapp.com';
+		$port = 4050;
+		$user = '7a2f0aa875c94306b77ef58cd43fa88d';//用户AK
+		$pwd = 'e4fdd5b5aef74b608462f1b8706e5a7d';//用户SK
+		$conn = mysqli_connect("{$host}:{$port}",$user,$pwd);
+		mysqli_select_db($conn,$dbname); //mysql_select_db("")指定mysql使用的数据库
 
 		$qid = mysqli_query($conn,"select count(*) as total from images");
 		$res = mysqli_fetch_array($qid);
