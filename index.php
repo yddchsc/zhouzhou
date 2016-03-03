@@ -1,6 +1,5 @@
 <?php 
 	session_start(); 
-	$_SESSION['views']=null;
 ?>
 <!doctype html>
 <html lang="zh">
@@ -125,8 +124,8 @@
 		});
 	</script>
 	<?php
-		if(!$_SESSION['views'])
-			$_SESSION['views']=0;
+		if(!$_SESSION['page'])
+			$_SESSION['page']=0;
 		$conn = mysqli_connect("sqld.duapp.com:4050","7a2f0aa875c94306b77ef58cd43fa88d","e4fdd5b5aef74b608462f1b8706e5a7d");
 		mysqli_select_db($conn,"vdxxYAcxvlZAZNycflys"); //mysql_select_db("")指定mysql使用的数据库
 
@@ -134,11 +133,11 @@
 		$res = mysqli_fetch_array($qid);
 		$num = $res['total'];
 		
-		$m=$_SESSION['views']*21+21;
-		$a=$_SESSION['views']*21;
+		$m=$_SESSION['page']*21+21;
+		$a=$_SESSION['page']*21;
 		if ($m>=$num){
 			$m=$num;
-			$_SESSION['views']=-1;
+			$_SESSION['page']=-1;
 		}
 		
 		$result=mysqli_query($conn,"SELECT * FROM images LIMIT $a,$m");
@@ -153,7 +152,7 @@
     			if($i==21)
     				break;
   			}
-  			$_SESSION['views']=$_SESSION['views']+1;
+  			$_SESSION['page']=$_SESSION['page']+1;
 		echo "
 	</script>";
 	?>
