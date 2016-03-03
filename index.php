@@ -1,5 +1,6 @@
 <?php 
 	session_start(); 
+	$_SESSION['views']=null;
 ?>
 <!doctype html>
 <html lang="zh">
