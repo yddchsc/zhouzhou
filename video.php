@@ -8,7 +8,7 @@
 	<script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
-	<div class="navbar navbar-inverse" role="navigation" style="margin:0;padding:0;">
+	<div class="navbar navbar-inverse" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
