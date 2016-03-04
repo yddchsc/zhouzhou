@@ -62,7 +62,7 @@
 				$row->name
 			</h4>
 			<p class=\"list-group-item-text\">
-				$row->src
+				视频源地址：$row->presrc
 			</p>
 		</a>";
 		}
