@@ -124,8 +124,10 @@
 		});
 	</script>
 	<?php
-		if(!$_SESSION['pages'])
+		if(!isset($_SESSION['pages']))
 			$_SESSION['pages']=0;
+		else
+			$_SESSION['pages']=$_SESSION['pages']+1;
 		$dbname = 'vdxxYAcxvlZAZNycflys';
 		/*填入数据库连接信息*/
 		$host = 'sqld.duapp.com';
@@ -148,7 +150,7 @@
 		$res = mysql_fetch_array($qid);
 		$num = $res['total'];
 		
-		$m=$_SESSION['pages']*21+21;
+		$m=$_SESSION['pages']*21+20;
 		$a=$_SESSION['pages']*21;
 
 		echo $_SESSION['pages'];
@@ -170,7 +172,6 @@
     			if($i==21)
     				break;
   			}
-  			$_SESSION['pages']=$_SESSION['pages']+1;
 		echo "
 	</script>";
 	?>
