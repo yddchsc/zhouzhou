@@ -70,8 +70,8 @@
 			</div>
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">相册</a></li>
-					<li><a href="#">视频</a></li>
+					<li class="active"><a href="index.php">相册</a></li>
+					<li><a href="video.php">视频</a></li>
 					<li><a href="#">联系我们</a></li>
 				</ul>
 			</div>
