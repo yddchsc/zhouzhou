@@ -17,6 +17,9 @@
 	<script src="http://libs.useso.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>-->
 	<link rel="stylesheet" type="text/css" href="css/gallerybox.css">
 	<style type="text/css">
+		body{
+			background-color:#b8b8b8;
+		}
 		#gallery-wrapper {
 		position: relative;
 		max-width: 75%;
