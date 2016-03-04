@@ -1,5 +1,5 @@
 <?php 
-	session_start(); 
+session_start(); 
 ?>
 <!doctype html>
 <html lang="zh">
@@ -21,42 +21,42 @@
 			background-color:#b8b8b8;
 		}
 		#gallery-wrapper {
-		position: relative;
-		max-width: 75%;
-		width: 75%;
-		margin:50px auto;
+			position: relative;
+			max-width: 75%;
+			width: 75%;
+			margin:50px auto;
 		}
 		img.gallerybox {
-		width: 100%;
-		max-width: 100%;
-		height: auto;
+			width: 100%;
+			max-width: 100%;
+			height: auto;
 		}
 		.white-panel {
-		position: absolute;
-		background: white;
-		border-radius: 5px;
-		box-shadow: 0px 1px 2px rgba(0,0,0,0.3);
-		padding: 10px;
+			position: absolute;
+			background: white;
+			border-radius: 5px;
+			box-shadow: 0px 1px 2px rgba(0,0,0,0.3);
+			padding: 10px;
 		}
 		.white-panel h1 {
-		font-size: 1em;
+			font-size: 1em;
 		}
 		.white-panel h1 a {
-		color: #A92733;
+			color: #A92733;
 		}
 		.white-panel:hover {
-		box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
-		margin-top: -5px;
-		-webkit-transition: all 0.3s ease-in-out;
-		-moz-transition: all 0.3s ease-in-out;
-		-o-transition: all 0.3s ease-in-out;
-		transition: all 0.3s ease-in-out;
+			box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+			margin-top: -5px;
+			-webkit-transition: all 0.3s ease-in-out;
+			-moz-transition: all 0.3s ease-in-out;
+			-o-transition: all 0.3s ease-in-out;
+			transition: all 0.3s ease-in-out;
 		}
 	</style>
 	<!--[if IE]>
 		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
-	<![endif]-->
-</head>
+		<![endif]-->
+	</head>
 	<div class="navbar navbar-inverse" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
@@ -72,35 +72,44 @@
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="index.php">相册</a></li>
 					<li><a href="video.php">视频</a></li>
-					<li><a href="#">联系我们</a></li>
+					<li><a href="contact.php">联系作者</a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
-		<section id="gallery-wrapper" class="wrapper">
-			<article class="white-panel"><img src="img/1.jpg" class="thumbnail gallerybox"></article>
-			<article class="white-panel"><img src="img/2.jpg" class="thumbnail gallerybox"></article>
-			<article class="white-panel"><img src="img/3.jpg" class="thumbnail gallerybox"></article>
-			<article class="white-panel"><img src="img/4.jpg" class="thumbnail gallerybox"></article>
-			<article class="white-panel"><img src="img/5.jpg" class="thumbnail gallerybox"></article>
-			<article class="white-panel"><img src="img/6.jpg" class="thumbnail gallerybox"></article>
-			<article class="white-panel"><img src="img/7.jpg" class="thumbnail gallerybox"></article>
-			<article class="white-panel"><img src="img/8.jpg" class="thumbnail gallerybox"></article>
-			<article class="white-panel"><img src="img/9.jpg" class="thumbnail gallerybox"></article>
-			<article class="white-panel"><img src="img/10.jpg" class="thumbnail gallerybox"></article>
-			<article class="white-panel"><img src="img/11.jpg" class="thumbnail gallerybox"></article>
-			<article class="white-panel"><img src="img/12.jpg" class="thumbnail gallerybox"></article>
-			<article class="white-panel"><img src="img/13.jpg" class="thumbnail gallerybox"></article>
-			<article class="white-panel"><img src="img/14.jpg" class="thumbnail gallerybox"></article>
-			<article class="white-panel"><img src="img/15.jpg" class="thumbnail gallerybox"></article>
-			<article class="white-panel"><img src="img/16.jpg" class="thumbnail gallerybox"></article>
-			<article class="white-panel"><img src="img/17.jpg" class="thumbnail gallerybox"></article>
-			<article class="white-panel"><img src="img/18.jpg" class="thumbnail gallerybox"></article>
-			<article class="white-panel"><img src="img/19.jpg" class="thumbnail gallerybox"></article>
-			<article class="white-panel"><img src="img/20.jpg" class="thumbnail gallerybox"></article>
-			<article class="white-panel"><img src="img/21.jpg" class="thumbnail gallerybox"></article>
-			<article class="white-panel"><form action="index.php" method="get"><button type="submit" class="btn btn-info btn-block" style="margin:90px 0 90px 0" id="btn">下一页</button></form></article>
-        </section>
+	<div class="container">
+		<div class="jumbotron">
+			<h1>欢迎来到粥粥的资源库</h1>
+			<p>此网站是作者为收集粥粥的照片与视频而建立的，也欢迎粥粉来交流和分享，如有疑问，可以点击下面的按钮 ~(@^_^@)~ </p>
+			<p><a href="contact.php" class="btn btn-primary btn-lg" role="button">
+				联系作者</a>
+			</p>
+		</div>
+	</div>
+	<section id="gallery-wrapper" class="wrapper">
+		<article class="white-panel"><img src="img/1.jpg" class="thumbnail gallerybox"></article>
+		<article class="white-panel"><img src="img/2.jpg" class="thumbnail gallerybox"></article>
+		<article class="white-panel"><img src="img/3.jpg" class="thumbnail gallerybox"></article>
+		<article class="white-panel"><img src="img/4.jpg" class="thumbnail gallerybox"></article>
+		<article class="white-panel"><img src="img/5.jpg" class="thumbnail gallerybox"></article>
+		<article class="white-panel"><img src="img/6.jpg" class="thumbnail gallerybox"></article>
+		<article class="white-panel"><img src="img/7.jpg" class="thumbnail gallerybox"></article>
+		<article class="white-panel"><img src="img/8.jpg" class="thumbnail gallerybox"></article>
+		<article class="white-panel"><img src="img/9.jpg" class="thumbnail gallerybox"></article>
+		<article class="white-panel"><img src="img/10.jpg" class="thumbnail gallerybox"></article>
+		<article class="white-panel"><img src="img/11.jpg" class="thumbnail gallerybox"></article>
+		<article class="white-panel"><img src="img/12.jpg" class="thumbnail gallerybox"></article>
+		<article class="white-panel"><img src="img/13.jpg" class="thumbnail gallerybox"></article>
+		<article class="white-panel"><img src="img/14.jpg" class="thumbnail gallerybox"></article>
+		<article class="white-panel"><img src="img/15.jpg" class="thumbnail gallerybox"></article>
+		<article class="white-panel"><img src="img/16.jpg" class="thumbnail gallerybox"></article>
+		<article class="white-panel"><img src="img/17.jpg" class="thumbnail gallerybox"></article>
+		<article class="white-panel"><img src="img/18.jpg" class="thumbnail gallerybox"></article>
+		<article class="white-panel"><img src="img/19.jpg" class="thumbnail gallerybox"></article>
+		<article class="white-panel"><img src="img/20.jpg" class="thumbnail gallerybox"></article>
+		<article class="white-panel"><img src="img/21.jpg" class="thumbnail gallerybox"></article>
+		<article class="white-panel"><form action="index.php" method="get"><button type="submit" class="btn btn-info btn-block" style="margin:90px 0 90px 0" id="btn">下一页</button></form></article>
+	</section>
 	
 	<script src="js/pinterest_grid.js"></script>
 	<script src="js/jquery.gallerybox.js"></script>
@@ -109,10 +118,10 @@
 		$(function(){
 			$("#gallery-wrapper").pinterest_grid({
 				no_columns: 4,
-                padding_x: 10,
-                padding_y: 10,
-                margin_bottom: 50,
-                single_column_breakpoint: 700
+				padding_x: 10,
+				padding_y: 10,
+				margin_bottom: 50,
+				single_column_breakpoint: 700
 			});
 			
 		});
@@ -127,27 +136,27 @@
 		});
 	</script>
 	<?php
-		if(!isset($_SESSION['pages']))
-			$_SESSION['pages']=0;
-		else
-			$_SESSION['pages']=$_SESSION['pages']+1;
-		$dbname = 'vdxxYAcxvlZAZNycflys';
-		/*填入数据库连接信息*/
-		$host = 'sqld.duapp.com';
-		$port = 4050;
+	if(!isset($_SESSION['pages']))
+		$_SESSION['pages']=0;
+	else
+		$_SESSION['pages']=$_SESSION['pages']+1;
+	$dbname = 'vdxxYAcxvlZAZNycflys';
+	/*填入数据库连接信息*/
+	$host = 'sqld.duapp.com';
+	$port = 4050;
 		$user = '7a2f0aa875c94306b77ef58cd43fa88d';//用户AK
 		$pwd = 'e4fdd5b5aef74b608462f1b8706e5a7d';//用户SK
 
 		$conn = @mysql_connect("{$host}:{$port}",$user,$pwd,true);
 		if(!$conn) {
-    		die("Connect Server Failed: " . mysql_error());
+			die("Connect Server Failed: " . mysql_error());
 		}
 		/*连接成功后立即调用mysql_select_db()选中需要连接的数据库*/
 		if(!mysql_select_db($dbname,$conn)) {
-    		die("Select Database Failed: " . mysql_error($conn));
+			die("Select Database Failed: " . mysql_error($conn));
 		}
 
-/*至此连接已完全建立，就可对当前数据库进行相应的操作了*/
+		/*至此连接已完全建立，就可对当前数据库进行相应的操作了*/
 //创建一个数据库表
 		$qid = mysql_query("select count(*) as total from images",$conn);
 		$res = mysql_fetch_array($qid);
@@ -156,7 +165,6 @@
 		$m=$_SESSION['pages']*21+20;
 		$a=$_SESSION['pages']*21;
 
-		echo $_SESSION['pages'];
 		if ($m >= $num){
 			$m=$num;
 			$_SESSION['pages']=-1;
@@ -165,16 +173,17 @@
 		$result=mysql_query("SELECT * FROM images LIMIT $a,$m",$conn);
 		
 		echo "<script type=\"text/javascript\">
-    		var images = document.getElementsByTagName(\"img\");";
-    		$i=0;
-    		while ($row=mysql_fetch_object($result)){
-    			$result1 = mysql_query("select * from images where id=$row->id",$conn) or die("Cant perform Query");  
-				$row1=mysql_fetch_object($result1);
-    			echo "images[$i].setAttribute(\"src\",\"$row1->src\");";
-    			$i=$i+1;
-    			if($i==21)
-    				break;
-  			}
+		var images = document.getElementsByTagName(\"img\");";
+		$i=0;
+		while ($row=mysql_fetch_object($result)){
+			$result1 = mysql_query("select * from images where id=$row->id",$conn) or die("Cant perform Query");  
+			$row1=mysql_fetch_object($result1);
+			echo "images[$i].setAttribute(\"src\",\"$row1->src\");";
+
+			$i=$i+1;
+			if($i==21)
+				break;
+		}
 		echo "
 	</script>";
 	?>
