@@ -59,10 +59,10 @@
 		while ($row=mysql_fetch_object($result)) {   
 		echo "
 		<a href=\"$row->src\" class=\"list-group-item\">
-			<h4 class=\"list-group-item-heading\">
+			<h4 class=\"list-group-item-heading\" style=\"overflow:hidden\">
 				$row->name
 			</h4>
-			<p class=\"list-group-item-text\">
+			<p class=\"list-group-item-text\" style=\"overflow:hidden\">
 				视频源地址：$row->presrc
 			</p>
 		</a>";
