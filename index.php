@@ -80,7 +80,7 @@ session_start();
 	<div class="container">
 		<div class="jumbotron">
 			<h1>欢迎来到粥粥的资源库</h1>
-			<p>此网站是作者为收集粥粥的照片与视频而建立的，也欢迎粥粉来交流和分享，如有疑问，可以点击下面的按钮 ~(@^_^@)~ </p>
+			<p>此网站是作者为收集粥粥的照片与视频而建立的，也欢迎白粥来交流和分享，如有疑问，可以点击下面的按钮 ~(@^_^@)~ </p>
 			<p><a href="contact.php" class="btn btn-primary btn-lg" role="button">
 				联系作者</a>
 			</p>
