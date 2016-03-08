@@ -155,18 +155,18 @@ session_start();
 			page.setAttribute(\"value\",\"".$page."\");
 			</script>";
 	}
-		/*$host = 'sqld.duapp.com';
+		$dbname = 'vdxxYAcxvlZAZNycflys';
+		$host = 'sqld.duapp.com';
 		$port = 4050;
 		$user = '7a2f0aa875c94306b77ef58cd43fa88d';//用户AK
 		$pwd = 'e4fdd5b5aef74b608462f1b8706e5a7d';//用户SK
 
-		$conn = @mysql_connect("{$host}:{$port}",$user,$pwd,true);*/
-		$conn = @mysql_connect("127.0.0.1","root","",true);
+		$conn = @mysql_connect("{$host}:{$port}",$user,$pwd,true);
 		if(!$conn) {
 			die("Connect Server Failed: " . mysql_error());
 		}
 		/*连接成功后立即调用mysql_select_db()选中需要连接的数据库*/
-		if(!mysql_select_db("user",$conn)) {
+		if(!mysql_select_db($dbname,$conn)) {
 			die("Select Database Failed: " . mysql_error($conn));
 		}
 
