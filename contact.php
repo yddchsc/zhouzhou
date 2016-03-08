@@ -22,9 +22,19 @@
 			</div>
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="index.php">相册</a></li>
+					<li class="active"><a href="picture.php">相册</a></li>
 					<li><a href="video.php">视频</a></li>
 					<li><a href="contact.php">联系作者</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<div class="input-append" style="padding:10px;">
+							<form method="get" action="search.php"> 
+  								<input class="span2" id="appendedInputButton" type="text" name="video">
+  								<button class="btn" type="submit" style="background-color:#155ebe;color:#ffffff">Go!</button>
+  							</form>
+						</div>
+					</li>
 				</ul>
 			</div>
 		</div>

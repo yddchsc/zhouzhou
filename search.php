@@ -46,7 +46,6 @@
 			</h4>
 		</a>
 	<?php
-		
 		$conn = @mysql_connect("127.0.0.1","root","",true);
 		if(!$conn) {
     		die("Connect Server Failed: " . mysql_error());
@@ -74,7 +73,18 @@
 			if ($i==0)
 				header("Location: login.php");
 		}
-		$result=mysql_query("SELECT * FROM videos",$conn) or die("Cant Perform Query");   
+		$video=$_GET["video"];
+		$video=preg_replace("/<script>/i", "", $video);
+		$video=preg_replace("/<\/script>/i", "", $video);
+		echo "<script type=\"text/javascript\">
+				var h=document.getElementsByTagName(\"h4\");
+				h[0].innerHTML=\" &quot; $video &quot; 的搜索结果\";
+			</script>";
+		if($video=="")
+			$result=mysql_query("SELECT * FROM videos",$conn) or die("Cant Perform Query");
+		else{
+			$result=mysql_query("SELECT * FROM videos WHERE name like '%$video%'",$conn) or die("Cant Perform Query");  
+		}
 		while ($row=mysql_fetch_object($result)) {   
 		echo "
 		<a href=\"$row->src\" class=\"list-group-item\">
