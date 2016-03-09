@@ -66,7 +66,7 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<button type="button" class="btn btn-primary btn-block btn-login" onClick="checkLogin()">
+						<button type="submit" class="btn btn-primary btn-block btn-login">
 							<i class="fa fa-sign-in"></i>
 							Login In
 						</button>
