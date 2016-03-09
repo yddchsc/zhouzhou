@@ -100,8 +100,8 @@
 				alert("密码字符中包含了敏感字符"+sql_str()+",请重新输入！");  
 				return ;  
 			}  
-			document.loginFrom.action="userLogin!login.action";  
-			document.loginFrom.submit();  
+			document.form_login.action="login.php";  
+			document.form_login.submit();  
 		}  
 		//<!-- 过滤一些敏感字符函数 -->  
 		function filterSqlStr(value){  
