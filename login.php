@@ -66,7 +66,7 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<button type="submit" class="btn btn-primary btn-block btn-login">
+						<button type="button" class="btn btn-primary btn-block btn-login" onClick="checkLogin()">
 							<i class="fa fa-sign-in"></i>
 							Login In
 						</button>
@@ -84,6 +84,42 @@
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+		function checkLogin(){  
+			var userName=document.getElementById("username").value;  
+			var userPass=document.getElementById("password").value;  
+			if(userName==''){  
+				alert("用户名不能为空！");  
+				return;  
+			}  
+			if( filterSqlStr(userName)){  
+				alert("用户名字符中包含了敏感字符"+sql_str()+",请重新输入！");  
+				return ;  
+			}  
+			if( filterSqlStr(userPass)){  
+				alert("密码字符中包含了敏感字符"+sql_str()+",请重新输入！");  
+				return ;  
+			}  
+			document.loginFrom.action="userLogin!login.action";  
+			document.loginFrom.submit();  
+		}  
+		//<!-- 过滤一些敏感字符函数 -->  
+		function filterSqlStr(value){  
+			var sqlStr=sql_str().split(',');  
+			var flag=false;  
+			for(var i=0;i<sqlStr.length;i++){  
+				if(value.toLowerCase().indexOf(sqlStr[i])!=-1){  
+					flag=true;  
+					break;  
+				}  
+			}  
+			return flag;  
+		}  
+		function sql_str(){  
+			var str="and,delete,or,exec,insert,select,union,update,count,*,',join,>,<";  
+			return str;  
+		}  
+	</script>
 <?php
 if($_POST){
 	$name = $_REQUEST['name'];
