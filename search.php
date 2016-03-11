@@ -84,6 +84,7 @@
 		$video=preg_replace("/>/", "", $video);
 		$video=preg_replace("/\"/", "", $video);
 		$video=preg_replace("/'/", "", $video);
+		$video=preg_replace("/\"/", "", $video);
 		echo "<script type=\"text/javascript\">
 				var h=document.getElementsByTagName(\"h4\");
 				h[0].innerHTML=\" &quot; $video &quot; 的搜索结果\";

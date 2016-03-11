@@ -5,9 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<title>登录</title>
 	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<!--  vali.js 核心 CSS 文件 主要是错误和正确的样式框 -->
+	<link rel="stylesheet" href="css/vali.css">
 	<link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css"/>
 	<script src="http://cdn.gbtags.com/jquery/2.1.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<!-- vali.js 核心 JavaScript 文件 -->
+	<script src="js/vali.min.js"></script>
 	<link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
 </head>
 <body>
